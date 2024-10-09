@@ -118,7 +118,7 @@ app.get('/menus', async (req, res) => {
         // Limit drinks to 15 items
         const drinks = {
             ...drinksData,
-            drinks: drinksData.drinks.slice(0, 15)
+            drinks: drinksData.drinks.slice(0, 12)
         };
 
         // Log the responses for debugging
@@ -172,5 +172,24 @@ app.get('/menus', (req, res) => {
 });
 
 
+// forms
+// body parser
+app.use(express.urlencoded({extended:true}));
+// form handling
+app.post("/contact", (req, res)=>{
+    let {name, email, message , phone} = req.body;
+    let data = {
+        name,
+        email,
+        message,
+        phone
+
+    };
+    console.log({data});
+    
+
+    res.send("ok");
+});
+ 
 //specifying where to access our app
 app.listen(port, ()=>console.log(`server started on port ${port}`));

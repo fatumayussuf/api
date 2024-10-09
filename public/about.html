@@ -7,9 +7,27 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 text-gray-800">
-    <header class="bg-green-900 p-4 text-white text-center">
-        <h1 class="text-3xl font-bold">Welcome to Our Restaurant</h1>
-    </header>
+    <header class="bg-green-900 text-white p-4 mx-auto flex flex-col md:flex-row justify-between items-center">
+        <!-- Logo Section -->
+        <a href="/" class="flex items-center mb-4 md:mb-0">
+          <img src="https://marketplace.canva.com/EAF0gFTwL4Y/1/0/1600w/canva-black-and-gold-luxury-elegant-restaurant-logo-design-KhumPklarLo.jpg" alt="Our Restaurant Logo" class="h-16 w-16 mr-2">
+          <h1 class="text-3xl font-bold">Feast & Flourish</h1>
+        </a>
+        
+        <!-- Navigation Section -->
+        <nav>
+          <ul class="flex space-x-4">
+            <li><a href="/" class="hover:underline">Home</a></li>
+            <li><a href="/about" class="hover:underline">About</a></li>
+            <li><a href="/menus" class="hover:underline">Menu</a></li>
+            <li><a href="/service" class="hover:underline">Service</a></li>
+            <li><a href="/gallery" class="hover:underline">Gallery</a></li>
+            <li><a href="/events" class="hover:underline">Events</a></li>
+            <li><a href="/blog" class="hover:underline">Blog</a></li>
+            <li><a href="/contact" class="hover:underline">Contact Us</a></li>
+          </ul>
+        </nav>
+      </header>
 
     <main class="container mx-auto my-10 p-5 bg-white rounded-lg shadow-lg">
         <section>
@@ -34,7 +52,7 @@
             <p class="mb-4">
                 We invite you to join us for an unforgettable meal. Our menu is crafted to cater to every palate, and our team is dedicated to providing top-notch service.
             </p>
-            <a href="/menu" class="inline-block bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">View Our Menu</a>
+            <a href="/menus" class="inline-block bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">View Our Menu</a>
         </section>
     </main>
 
