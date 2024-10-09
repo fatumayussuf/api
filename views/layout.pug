@@ -1,0 +1,45 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title= title
+    link(href="/output.css" rel="stylesheet")
+    
+  body(class="bg-gray-100 text-gray-800")
+    header(class="bg-green-800 text-white p-4 mx-auto flex flex-col md:flex-row justify-between items-center")
+      
+        // Logo Section
+        a(href="" class="flex items-center")
+          img(src="https://marketplace.canva.com/EAF0gFTwL4Y/1/0/1600w/canva-black-and-gold-luxury-elegant-restaurant-logo-design-KhumPklarLo.jpg" alt="Our Restaurant Logo" class="h-16 w-16 mr-2")
+          h1.text-3xl.font-bold Feast & Flourish
+
+        nav
+          ul.flex.space-x-4
+            li
+              a(href="/" class="hover:underline") Home
+            li
+              a(href="/about" class="hover:underline") About
+            li
+              a(href="/menus" class="hover:underline") Menu
+            li
+              a(href="/service" class="hover:underline") Service
+            li
+              a(href="/gallery" class="hover:underline") Gallery
+            li
+              a(href="/events" class="hover:underline") Events
+            li
+              a(href="/blog" class="hover:underline") Blog
+            li
+              a(href="/contact" class="hover:underline") Contact Us
+
+    main(class="container mx-auto my-10 p-5 bg-white rounded-lg shadow-lg")
+      block content
+
+    footer(class="bg-green-800 text-white p-4 mt-10 text-center")
+      p &copy; 2024 Our Restaurant. All rights reserved.
+      p 123 Main Street, Westlands, Nairobi, Kenya | Phone: +254 700 123456
+      p Follow us on:
+        a(href="#" class="text-white hover:underline ml-2") Facebook
+        a(href="#" class="text-white hover:underline ml-2") Instagram 
+        a(href="#" class="text-white hover:underline ml-2") Twitter

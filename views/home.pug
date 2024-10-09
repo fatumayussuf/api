@@ -1,0 +1,41 @@
+
+extends layout
+
+block content
+  // Hero Section
+  section(class="relative h-screen flex flex-col items-center justify-center bg-cover bg-center text-center" style="background-image: url('https://media.istockphoto.com/id/1829241109/photo/enjoying-a-brunch-together.jpg?b=1&s=612x612&w=0&k=20&c=Mn_EPBAGwtzh5K6VyfDmd7Q5eJFXSHhGWVr3T4WDQRo=');")
+    // Dark overlay for better text contrast
+    div(class="absolute inset-0 bg-black/50")
+    
+    // Text Content
+    div(class="relative z-10 px-4")
+      h1(class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4") Welcome to Feast & Flourish!
+      p(class="text-lg md:text-xl lg:text-2xl text-white max-w-2xl mx-auto") Discover our delicious recipes and nearby breweries that are sure to delight your taste buds.
+
+  
+  // Recipes Section
+  h2(class="text-3xl font-bold text-center mb-4 text-green-700") Our Delicious Recipes
+  if recipes && recipes.length > 0
+    ul(class="space-y-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4")
+      each recipe in recipes
+        li(class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow")
+          h3(class="text-2xl font-semibold text-gray-800 mb-2")= recipe.title
+          img(src=recipe.image, alt=recipe.title, class="w-full h-48 object-cover rounded-md mb-4")
+  else
+    p(class="text-gray-700 text-center") No recipes found.
+
+  // Breweries Section
+  h2(class="text-3xl font-bold text-center mb-4 text-green-700") Nearby Breweries
+  if breweries && breweries.length > 0
+    ul(class="space-y-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4")
+      each brewery in breweries
+        li(class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow")
+          h3(class="text-2xl font-semibold text-gray-800 mb-2")= brewery.name
+          p(class="text-gray-600 mb-1") Type: 
+            span(class="font-medium text-gray-800")= brewery.brewery_type
+          p(class="text-gray-600 mb-1") Address: 
+            span(class="font-medium text-gray-800")= brewery.address_1
+          p(class="text-gray-600 mb-1") City: 
+            span(class="font-medium text-gray-800")= brewery.city
+  else
+    p(class="text-gray-700 text-center") No breweries found.

@@ -1,0 +1,23 @@
+doctype html
+extends layout
+
+block content
+  h1 Welcome to Our Restaurant!
+  p Discover the best culinary delights with us.
+
+  body(class="bg-gray-100 p-8")
+    h2(class="text-3xl font-bold text-center mb-6") List of Breweries
+    if breweries && breweries.length
+      ul(class="space-y-4 ")
+        each brewery in breweries
+          li(class="bg-white border border-gray-300 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow")
+            h2(class="text-xl font-semibold text-blue-600")= brewery.name
+            p(class="text-gray-700") Type: #{brewery.brewery_type}
+            p(class="text-gray-600") Address: #{brewery.street}, #{brewery.city}, #{brewery.state}, #{brewery.country}
+            p(class="text-gray-600") Phone: #{brewery.phone || 'N/A'}
+            if brewery.website_url
+              a(class="text-blue-500 hover:underline" href=brewery.website_url target="_blank") Visit Website
+            else
+              p(class="text-gray-500 italic") Website: Not available
+    else
+      p(class="text-gray-500 text-center") No breweries found.
